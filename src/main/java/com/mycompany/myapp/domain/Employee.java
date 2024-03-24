@@ -41,6 +41,9 @@ public class Employee implements Serializable {
     @Column(name = "email")
     private String email;
 
+    @Column(name = "email2")
+    private String email2;
+
     @Column(name = "phone_number")
     private String phoneNumber;
 

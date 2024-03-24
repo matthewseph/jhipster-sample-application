@@ -187,18 +187,6 @@ public class EmployeeResource {
         return ResponseEntity.ok().headers(headers).body(page.getContent());
     }
 
-    /**
-     * {@code GET  /employees/:id} : get the "id" employee.
-     *
-     * @param id the id of the employee to retrieve.
-     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the employee, or with status {@code 404 (Not Found)}.
-     */
-    @GetMapping("/{id}")
-    public ResponseEntity<Employee> getEmployee(@PathVariable("id") Long id) {
-        log.debug("REST request to get Employee : {}", id);
-        Optional<Employee> employee = employeeRepository.findById(id);
-        return ResponseUtil.wrapOrNotFound(employee);
-    }
 
 
 }
