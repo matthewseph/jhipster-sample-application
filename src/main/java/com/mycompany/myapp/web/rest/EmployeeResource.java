@@ -200,18 +200,5 @@ public class EmployeeResource {
         return ResponseUtil.wrapOrNotFound(employee);
     }
 
-    /**
-     * {@code DELETE  /employees/:id} : delete the "id" employee.
-     *
-     * @param id the id of the employee to delete.
-     * @return the {@link ResponseEntity} with status {@code 204 (NO_CONTENT)}.
-     */
-    @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteEmployee(@PathVariable("id") Long id) {
-        log.debug("REST request to delete Employee : {}", id);
-        employeeRepository.deleteById(id);
-        return ResponseEntity.noContent()
-            .headers(HeaderUtil.createEntityDeletionAlert(applicationName, true, ENTITY_NAME, id.toString()))
-            .build();
-    }
+
 }
